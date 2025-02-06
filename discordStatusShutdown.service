@@ -1,0 +1,12 @@
+[Unit]
+Description=Send discord notification on shutdown
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/home/dan/src/status/shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
