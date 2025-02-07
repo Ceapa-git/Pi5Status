@@ -1,0 +1,14 @@
+[Unit]
+Description=Send a message on startup and shutdown
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStart=/home/dan/src/status/startup.sh
+ExecStop=/home/dan/src/status/shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
